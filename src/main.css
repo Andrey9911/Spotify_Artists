@@ -1,0 +1,113 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bgc-main: #000000;
+  --bgc-blocks: #1DB954;
+  --hover: #b91d82;
+  --color-text: #fff;
+  --note: #fff;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: var(--hover);
+  transform: scale(1.2);
+}
+
+.but {
+  transition: 0.4s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--bgc-blocks);
+  padding: 5px 20px;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.but:hover {
+  transform: scale(1.2);
+}
+
+.error {
+  opacity: 0;
+  display: none;
+  padding: 10px 50px;
+  position: absolute;
+  top: 40vh;
+  left: 42%;
+  background-color: var(--note);
+  border-radius: 10px;
+}
+.error .but {
+  margin: 10px auto 5px auto;
+}
+
+.error.active {
+  display: block;
+}
+.error.active.active-anim {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+header {
+  box-sizing: border-box;
+  background-color: var(--bgc-blocks);
+  padding: 50px 100px;
+  display: flex;
+  align-items: center;
+}
+header .artist {
+  display: flex;
+  align-items: center;
+  margin-right: 40%;
+}
+header .artist .img_artist-block > img {
+  border-radius: 7px;
+  width: 150px;
+  height: 150px;
+}
+header .artist .artist_name {
+  font-weight: bold;
+  font-size: 2em;
+  color: var(--color-text);
+  margin-left: 10px;
+}
+header #search {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  color: var(--color-text);
+  font-weight: bold;
+}
+header #search::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7294117647);
+  font-weight: 100;
+}
+header #search:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7294117647);
+  font-weight: 100;
+}
+header #search::placeholder {
+  color: rgba(255, 255, 255, 0.7294117647);
+  font-weight: 100;
+}
+
+body {
+  background-color: var(--bgc-main);
+}/*# sourceMappingURL=main.css.map */

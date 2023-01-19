@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "scss-loader": "^0.0.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "sass-loader": "^13.2.0"
+  }
+}

@@ -1,0 +1,105 @@
+$display-f: flex;
+$pl_big-block: 100px;
+$pl_small-block: 10px;
+$transition-inline: .2s;
+$transition-block: .4s;
+
+
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --bgc-main:  #000000;
+    --bgc-blocks: #1DB954;
+    --hover: #b91d82;
+    --color-text: #fff;
+    --note: #fff;
+
+}
+
+.icon{width: 20px;height: 20px;color: var(--color-text);transition: $transition-inline; cursor: pointer;}
+.icon:hover{color: var(--hover); transform: scale(1.2) }
+.but{
+    transition: $transition-block;
+    width: fit-content;
+    background-color: var(--bgc-blocks);
+    padding: 5px $pl_small-block + 10;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 20px;
+
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+.error{
+    opacity: 0;
+    display: none;
+    padding: $pl_small-block $pl_small-block + 40;
+    position: absolute;
+    top: 40vh;
+    left: 42%;
+    background-color: var(--note);
+    border-radius: 10px;
+
+    & .but{margin: 10px auto 5px auto;}
+}
+.error.active{
+    display: block;
+
+    &.active-anim{
+        opacity: 1;
+        transition: $transition-block;
+        // animation: open_panel $transition-block;
+    }
+}
+
+header{
+    box-sizing: border-box;
+    background-color: var(--bgc-blocks);
+    padding: 50px $pl_big-block;
+    display: $display-f;
+    align-items: center;
+
+    .artist{
+        display: $display-f;
+        align-items: center;
+        margin-right: 40%;
+
+        .img_artist-block>img{
+            border-radius: 7px;
+            width: 150px;
+            height: 150px;
+
+        }
+        .artist_name{
+            font-weight: bold;
+            font-size: 2em;
+            color: var(--color-text);
+            margin-left: 10px;
+        }
+    }
+    #search{
+        padding: $pl_small-block;
+        border-radius: 10px;
+        background-color: #ffffff66;
+        border: none;
+        color: var(--color-text);
+        font-weight: bold;
+
+        &::placeholder{
+            color: #ffffffba;
+            font-weight: 100;
+        }
+    }
+
+}
+body{
+    background-color: var(--bgc-main);
+}
+
