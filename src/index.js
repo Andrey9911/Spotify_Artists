@@ -11,9 +11,9 @@ window.onload = () => {
     document.querySelector(".artist_name").textContent = name_artist;
 }
 
-for(i of document.querySelectorAll(".content li"))
+for(i of document.querySelector(".content").children)
 {
-
+        
         i.addEventListener("mouseenter", e => {
             giveInfo(e)
         })
@@ -58,7 +58,24 @@ async function searchFind(event)//найти инфу про артиста
             console.log(id_artist);
             f(id_artist)
         })
+        .then(()=>{
+            setTimeout(() => {
+                console.log(2);
+                
+                for(i of document.querySelectorAll(".content li"))
+                {
+                i.addEventListener("mousemove", e => {
+                    giveInfo(e)
+                })
+                i.addEventListener("mouseleave", e => {
+                    document.querySelector(".dop-info_block").classList.remove("active")
+                })
+                }
+            },3000)
+            
+        })
         .catch(err => {
+            console.log(err);
             setTimeout(() => {
                 document.querySelector(".error").classList.add("active-anim")
             },100)

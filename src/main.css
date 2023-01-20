@@ -10,6 +10,7 @@
   --hover: #b91d82;
   --color-text: #fff;
   --note: #fff;
+  --some-block:#000000;
 }
 
 .icon {
@@ -123,6 +124,23 @@ main .popul_relz {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
+}
+main .popul_relz .dop-info_block {
+  display: none;
+  border-radius: 0;
+  border-right: 3px solid var(--bgc-blocks);
+  padding: 5px 10px;
+  color: var(--color-text);
+  background-color: var(--some-block);
+  width: 300px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+}
+main .popul_relz .dop-info_block.active {
+  display: block;
 }
 main .popul_relz .popular {
   box-sizing: border-box;
