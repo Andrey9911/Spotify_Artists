@@ -11,6 +11,13 @@ window.onload = () => {
     document.querySelector(".artist_name").textContent = name_artist;
 }
 
+for(i of document.querySelectorAll(".content li"))
+{
+
+        i.addEventListener("mouseenter", e => {
+            giveInfo(e)
+        })
+}
 
 document.querySelector(".but.close_block").addEventListener("click",(e)=>{
     e.target.parentElement.classList.remove("active")
@@ -49,7 +56,7 @@ async function searchFind(event)//найти инфу про артиста
         })
         .then(id_artist => {
             console.log(id_artist);
-            defindPopulr(id_artist)
+            f(id_artist)
         })
         .catch(err => {
             setTimeout(() => {
