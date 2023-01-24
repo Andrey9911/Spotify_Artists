@@ -13,12 +13,28 @@
   --some-block:#000000;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  margin: 0 5px;
+}
+a:hover {
+  color: #b91d82;
+}
+a .def {
+  pointer-events: none;
+}
+
 .icon {
   width: 20px;
   height: 20px;
   color: var(--color-text);
   transition: 0.2s;
   cursor: pointer;
+}
+.icon.big {
+  width: 30px;
+  height: 30px;
 }
 
 .icon:hover {
@@ -50,6 +66,7 @@
 }
 
 .error {
+  z-index: 5;
   opacity: 0;
   display: none;
   padding: 10px 50px;
@@ -71,7 +88,19 @@
   transition: 0.4s;
 }
 
+.search {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
 header {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   box-sizing: border-box;
   background-color: var(--bgc-blocks);
   padding: 20px 100px;
@@ -94,14 +123,6 @@ header .artist .artist_name {
   color: var(--color-text);
   margin-left: 10px;
 }
-header #search {
-  padding: 10px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border: none;
-  color: var(--color-text);
-  font-weight: bold;
-}
 header #search::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7294117647);
   font-weight: 100;
@@ -115,7 +136,29 @@ header #search::placeholder {
   font-weight: 100;
 }
 
+aside {
+  transition: 0.4s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  box-sizing: border-box;
+  color: var(--color-text);
+  background-color: var(--bgc-blocks);
+}
+aside.active {
+  top: 100px;
+}
+aside .side_mini-content {
+  padding: 10px;
+  display: flex;
+}
+aside .side_mini-content div {
+  margin: 0 10px;
+}
+
 main {
+  display: flex;
   padding: 50px 100px;
 }
 main .popul_relz {
@@ -174,6 +217,22 @@ main .popul_relz .popular .content li img {
   width: 50px;
   height: 50px;
   margin-right: 30px;
+}
+main .texts_template .search_block {
+  display: flex;
+}
+main .texts_template .search_block input[id=search_songs] {
+  margin-right: 10px;
+}
+main .texts_template .song_text-block {
+  color: var(--color-text);
+  margin: 50px 0;
+  border-radius: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(124, 124, 124, 0.2);
+  padding: 20px;
 }
 
 body {

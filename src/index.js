@@ -4,6 +4,7 @@ let id_artist = undefined;
 
 
 window.onload = () => {
+    render(home_template)
     if(name_artist.length == 0)
     {
         name_artist = "search, please :/"
@@ -11,13 +12,6 @@ window.onload = () => {
     document.querySelector(".artist_name").textContent = name_artist;
 }
 
-for(i of document.querySelector(".content").children)
-{
-        
-        i.addEventListener("mouseenter", e => {
-            giveInfo(e)
-        })
-}
 
 document.querySelector(".but.close_block").addEventListener("click",(e)=>{
     e.target.parentElement.classList.remove("active")

@@ -5,6 +5,7 @@ $transition-inline: .2s;
 $transition-block: .4s;
 
 
+
 *{
     font-family: sans-serif;
     margin: 0;
@@ -20,7 +21,22 @@ $transition-block: .4s;
 
 }
 
-.icon{width: 20px;height: 20px;color: var(--color-text);transition: $transition-inline; cursor: pointer;}
+a{
+    text-decoration: none;
+    color: var(--color-text);
+    margin: 0 5px;
+    &:hover{color: #b91d82;}
+    .def{pointer-events: none;}
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    color: var(--color-text);
+    transition: $transition-inline; 
+    cursor: pointer;
+
+    &.big{width: 30px;height: 30px;}
+}
 .icon:hover{color: var(--hover); transform: scale(1.2) }
 .but{
     transition: $transition-block;
@@ -40,6 +56,7 @@ $transition-block: .4s;
 .mini-img{width: fit-content;}
 
 .error{
+    z-index: 5;
     opacity: 0;
     display: none;
     padding: $pl_small-block $pl_small-block + 40;
@@ -60,8 +77,19 @@ $transition-block: .4s;
         // animation: open_panel $transition-block;
     }
 }
+.search{
+    padding: $pl_small-block;
+    border-radius: 10px;
+    background-color: #ffffff66;
+    border: none;
+    color: var(--color-text);
+    font-weight: bold;
+}
 
 header{
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 5px 10px 2px #223c5033;
     box-sizing: border-box;
     background-color: var(--bgc-blocks);
     padding: 20px $pl_big-block;
@@ -86,23 +114,36 @@ header{
             margin-left: 10px;
         }
     }
-    #search{
-        padding: $pl_small-block;
-        border-radius: 10px;
-        background-color: #ffffff66;
-        border: none;
-        color: var(--color-text);
-        font-weight: bold;
+    
 
-        &::placeholder{
-            color: #ffffffba;
-            font-weight: 100;
-        }
+    #search::placeholder{
+        color: #ffffffba;
+        font-weight: 100;
     }
+    
 
 }
 
+aside
+{
+    transition: $transition-block;
+    width: fit-content;
+    text-align: center;
+    box-sizing: border-box;
+    color: var(--color-text);
+    background-color: var(--bgc-blocks);
+
+    &.active{top: 100px;}
+
+    .side_mini-content{
+        padding: $pl_small-block;
+        display: $display-f;
+
+        div{margin: 0 10px;}
+    }
+}
 main{
+    display: $display-f;
     padding: $pl_big-block - 50 $pl_big-block;
 
     .popul_relz{
@@ -155,6 +196,26 @@ main{
             }
         }
     }
+    
+    .texts_template{
+        .search_block{
+            display: $display-f;
+
+            & input[id='search_songs']{
+                margin-right: 10px;
+            }
+            
+        }
+        .song_text-block{
+            color: var(--color-text);
+            margin: 50px 0;
+            border-radius: 10px;
+            width: fit-content;
+            background-color: #7c7c7c33;
+            padding: $pl_big-block - 80;
+        }
+    }
+    
 
     
 }
