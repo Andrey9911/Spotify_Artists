@@ -37,7 +37,9 @@ a{
 
     &.big{width: 30px;height: 30px;}
 }
-.icon:hover{color: var(--hover); transform: scale(1.2) }
+[data-icon='nav'].active svg{color: var(--hover);}
+.icon:hover{color: var(--hover); transform: scale(1.2)}
+
 .but{
     transition: $transition-block;
     width: fit-content;
@@ -87,6 +89,7 @@ a{
 }
 
 header{
+    justify-content: space-between;
     position: relative;
     z-index: 2;
     box-shadow: 0px 5px 10px 2px #223c5033;
@@ -99,12 +102,14 @@ header{
     .artist{
         display: $display-f;
         align-items: center;
-        margin-right: 40%;
+        // margin-right: 40%;
 
         .img_artist-block>img{
             border-radius: 7px;
-            width: 150px;
+            max-width: 150px;
+            min-width: 10px;
             height: 150px;
+
 
         }
         .artist_name{
@@ -113,6 +118,29 @@ header{
             color: var(--color-text);
             margin-left: 10px;
         }
+
+    }
+    .header-option{
+        display: $display-f; 
+        align-items: center;
+        width: 280px;
+        justify-content: space-between;
+        cursor: pointer;
+
+            .header-option_icon{
+                width: 50px;
+                height: 50px;
+                border: 3px solid var(--color-text);
+                border-radius: 7px;
+                padding: 2px;
+                box-sizing: border-box;
+
+                    &>svg{
+                        width: 40px;
+                        height: 40px;
+                        color: var(--color-text);
+                    }
+            }
     }
     
 
@@ -126,8 +154,15 @@ header{
 
 aside
 {
+    position: absolute;
+    top: 0;
     transition: $transition-block;
-    width: fit-content;
+    box-sizing: border-box;
+    color: var(--color-text);
+    background-color: var(--bgc-blocks);
+
+
+    // width: fit-content;
     text-align: center;
     box-sizing: border-box;
     color: var(--color-text);
@@ -200,6 +235,7 @@ main{
     .texts_template{
         .search_block{
             display: $display-f;
+            align-items: center;
 
             & input[id='search_songs']{
                 margin-right: 10px;
@@ -210,7 +246,8 @@ main{
             color: var(--color-text);
             margin: 50px 0;
             border-radius: 10px;
-            width: fit-content;
+            min-width: 0px;
+            max-width: 500px;
             background-color: #7c7c7c33;
             padding: $pl_big-block - 80;
         }

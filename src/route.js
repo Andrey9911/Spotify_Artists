@@ -36,10 +36,17 @@ function render(content)
 for(el of document.querySelector(".side_mini-content").children)
 {
     
+    
 
     el.addEventListener("click", ev => {
+        
         let target = ev.currentTarget
         let defaultUrl = window.location.href
+
+        for(el of document.querySelector(".side_mini-content").children)
+                {el.classList.remove('active')}
+
+        target.classList.add('active')
         // let nUrl = new URL(`/index.html/${target.href}`, window.location.href)
         
         console.log( target.dataset.index);
