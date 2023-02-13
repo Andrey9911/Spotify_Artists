@@ -44,7 +44,6 @@ a .def {
 
 .but {
   transition: 0.4s;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   background-color: var(--bgc-blocks);
@@ -60,7 +59,6 @@ a .def {
 }
 
 .mini-img {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -123,11 +121,27 @@ header .artist .artist_name {
   color: var(--color-text);
   margin-left: 10px;
 }
-header #search::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.7294117647);
-  font-weight: 100;
+header .header-option {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  justify-content: space-between;
+  cursor: pointer;
 }
-header #search:-ms-input-placeholder {
+header .header-option .header-option_icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--color-text);
+  border-radius: 7px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+header .header-option .header-option_icon > svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-text);
+}
+header #search::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7294117647);
   font-weight: 100;
 }
@@ -137,10 +151,12 @@ header #search::placeholder {
 }
 
 aside {
+  position: absolute;
+  top: 0;
   transition: 0.4s;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  box-sizing: border-box;
+  color: var(--color-text);
+  background-color: var(--bgc-blocks);
   text-align: center;
   box-sizing: border-box;
   color: var(--color-text);
@@ -164,7 +180,6 @@ main {
 main .popul_relz {
   display: flex;
   margin: 0 auto;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -177,7 +192,6 @@ main .popul_relz .dop-info_block {
   color: var(--color-text);
   background-color: var(--some-block);
   width: 300px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   position: absolute;
@@ -194,7 +208,6 @@ main .popul_relz .popular {
   padding: 10px;
   margin: 50px;
   max-height: 500px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   min-height: 50px;
@@ -228,7 +241,6 @@ main .texts_template .song_text-block {
   color: var(--color-text);
   margin: 50px 0;
   border-radius: 10px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   background-color: rgba(124, 124, 124, 0.2);

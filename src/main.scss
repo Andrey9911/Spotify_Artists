@@ -113,6 +113,30 @@ header{
             color: var(--color-text);
             margin-left: 10px;
         }
+
+    }
+    
+    .header-option{
+        display: $display-f; 
+        align-items: center;
+        width: 280px;
+        justify-content: space-between;
+        cursor: pointer;
+
+            .header-option_icon{
+                width: 50px;
+                height: 50px;
+                border: 3px solid var(--color-text);
+                border-radius: 7px;
+                padding: 2px;
+                box-sizing: border-box;
+
+                    &>svg{
+                        width: 40px;
+                        height: 40px;
+                        color: var(--color-text);
+                    }
+            }
     }
     
 
@@ -126,8 +150,15 @@ header{
 
 aside
 {
+    position: absolute;
+    top: 0;
     transition: $transition-block;
-    width: fit-content;
+    box-sizing: border-box;
+    color: var(--color-text);
+    background-color: var(--bgc-blocks);
+
+
+    // width: fit-content;
     text-align: center;
     box-sizing: border-box;
     color: var(--color-text);

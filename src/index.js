@@ -12,6 +12,22 @@ window.onload = () => {
     document.querySelector(".artist_name").textContent = name_artist;
 }
 
+document.querySelector(".aside").addEventListener("click",() => {
+    document.querySelector("aside").classList.add("active")
+})
+document.body.addEventListener("click",e => {
+    let curr = e.target.parentElement
+    console.log();
+    if(document.querySelector("aside").classList.contains("active"))
+    {
+        if(!curr.classList.contains("asideTag") && !curr.classList.contains("aside")){
+            document.querySelector("aside").classList.remove("active")
+        }
+        else console.log(false);
+        
+    }
+    
+})
 
 document.querySelector(".but.close_block").addEventListener("click",(e)=>{
     e.target.parentElement.classList.remove("active")
