@@ -110,6 +110,7 @@ header{
     padding: 20px $pl_big-block;
     display: $display-f;
     align-items: center;
+    height: 150px;
 
     .artist{
         display: $display-f;
@@ -118,8 +119,8 @@ header{
 
         .img_artist-block>img{
             border-radius: 7px;
-            max-width: 150px;
-            max-height: 150px;
+            max-width: 100px;
+            max-height: 100px;
 
 
         }
@@ -187,7 +188,8 @@ aside
     color: var(--color-text);
     background-color: var(--bgc-blocks);
 
-    &.active{top: 100px;}
+    &.active{top: 150px;}
+
 
     .side_mini-content{
         padding: $pl_small-block;

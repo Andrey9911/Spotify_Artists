@@ -123,6 +123,7 @@ header {
   padding: 20px 100px;
   display: flex;
   align-items: center;
+  height: 150px;
 }
 header .artist {
   display: flex;
@@ -131,8 +132,8 @@ header .artist {
 }
 header .artist .img_artist-block > img {
   border-radius: 7px;
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 100px;
+  max-height: 100px;
 }
 header .artist .artist_name {
   font-weight: bold;
@@ -191,7 +192,7 @@ aside {
   background-color: var(--bgc-blocks);
 }
 aside.active {
-  top: 100px;
+  top: 150px;
 }
 aside .side_mini-content {
   padding: 10px;

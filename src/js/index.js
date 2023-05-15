@@ -16,12 +16,14 @@ window.onload = () => {
     document.querySelector(".artist_name").textContent = name_artist;
 }
 
-document.querySelector(".aside").addEventListener("click",() => {
-    document.querySelector("aside").classList.add("active")
+document.querySelector(".aside").addEventListener("click",(event) => {
+    
+    if(event.currentTarget != null) document.querySelector("aside").classList.add("active")
+    
 })
 document.body.addEventListener("click",e => {
-    let curr = e.target.parentElement
-    console.log();
+    let curr = e.target.parentElement;
+    console.log(curr);
     if(document.querySelector("aside").classList.contains("active"))
     {
         if(!curr.classList.contains("asideTag") && !curr.classList.contains("aside")){
@@ -39,7 +41,14 @@ document.querySelector(".but.close_block").addEventListener("click",(e)=>{
 
 })
 document.querySelector(".search_but").addEventListener("click", (e)=>{
+    render(home_template);
     searchFind(e.target.parentElement.querySelector("#search").value)
+
+})
+document.addEventListener("keydown", (e)=>{
+    render(home_template);
+    if(e.code == "Enter") searchFind(document.querySelector("#search").value)
+    
 })
 
 async function searchFind(event)//найти инфу про артиста
