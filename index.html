@@ -8,12 +8,30 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="start-modal-block start-modal-block_show">
+        <div class="content">
+            <div class="search-block__options">
+                    <div data-type="ARTIST_NIK" class="opt opt_active ">Artist nik</div>
+                    <div data-type="SONGS" class="opt">name songs</div>
+                </div>
+            <div class="start-modal-block__search-block search-block">
+                <input type="search" name="" class="search" id="search" placeholder="search artists name...">
+                <div class="search-block__button but">
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="icon search_but bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </div>
+                
+            </div>
+        </div>
+         
+    </div>
     <div class="hint">чтобы пользоваться поисковиком, на главной странице напишите название певца</div>
     <div class="error">
         <p>sorry, but we can`t to find</p>
         <div class="but close_block">Ok:(</div>
     </div>
-    <header>
+    <header class="container-md">
         <div class="artist">
             <div class="img_artist-block" style="width: fit-content;">
                 <img src="" alt="" >
@@ -21,12 +39,13 @@
             <div class="artist_name"></div>
         </div>
         <div class="header-option">
-            <div class="search_block search-with-icon">
+            <div class="header__search-block search-block">
                 <input type="search" name="" class="search" id="search" placeholder="search artists name...">
-                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="icon search_but bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </div>
+                <div class="search-block__button but">
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="icon search_but bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </div>
             <div class="header-option_icon aside">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>

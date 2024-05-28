@@ -17,11 +17,17 @@ const home_template = `
         `
 const texts_template = `
 <div class="texts_template">
-<div class="search_block">
-    <input type="text" class="search" id="search_songs">
-    <div class="but">Найти</div>
-</div>
-<div class="song_text-block"></div>
+    <div class="search_block">
+        <input type="text" class="search" id="search_songs">
+        <div class="but">Найти</div>
+    </div>
+    <div class="song-info">
+
+    </div>
+    <div class="song_title">
+        <h2></h2>
+    </div>
+    <div class="song_text-block"></div>
 
 </div>
 `

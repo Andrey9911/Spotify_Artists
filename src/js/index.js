@@ -1,11 +1,14 @@
 // import name from "defindPopulr"
 let name_artist = "";
 let id_artist = undefined;
+let option = undefined;
+
 
 
 window.onload = () => {
-
-    document.querySelector(".hint").classList.add("hint_active")
+    option = 'ARTIST_NIK';
+    sessionStorage.clear();
+    document.querySelector(".hint").classList.add("hint_active");
     setTimeout(() => {document.querySelector(".hint").classList.remove("hint_active")},5000)
 
     render(home_template)
@@ -21,35 +24,56 @@ document.querySelector(".aside").addEventListener("click",(event) => {
     if(event.currentTarget != null) document.querySelector("aside").classList.add("active")
     
 })
-document.body.addEventListener("click",e => {
-    let curr = e.target.parentElement;
-    console.log(curr);
-    if(document.querySelector("aside").classList.contains("active"))
-    {
-        if(!curr.classList.contains("asideTag") && !curr.classList.contains("aside")){
-            document.querySelector("aside").classList.remove("active")
-        }
-        else console.log(false);
-        
-    }
-    
-})
+
+console.log(document.getElementsByClassName("opt"));
+for(el of document.getElementsByClassName("opt"))
+{
+    el.addEventListener('click', e => {
+        e.srcElement.classList.toggle('opt_active');
+        option = e.srcElement.dataset.type;
+        console.log(option);
+    })
+
+};
 
 document.querySelector(".but.close_block").addEventListener("click",(e)=>{
     e.target.parentElement.classList.remove("active")
     e.target.parentElement.classList.remove("active-anim")
 
 })
-document.querySelector(".search_but").addEventListener("click", (e)=>{
-    render(home_template);
-    searchFind(e.target.parentElement.querySelector("#search").value)
+document.querySelector(".search-block__button").addEventListener("click", (e)=>{
+    if(e.target.parentElement.querySelector("#search").value == null || e.target.parentElement.querySelector("#search").value === sessionStorage.getItem('nik')){
+        console.log('Вы ниче не ввели или такой уже нашелся ;)');
+        return
+     }
+       
+    if(document.querySelector(".start-modal-block").classList.contains('start-modal-block_show'))
+        {document.querySelector(".start-modal-block").classList.toggle('start-modal-block_show')}
+    
+    if(option == 'ARTIST_NIK') {
+        sessionStorage.setItem('nik',e.target.parentElement.querySelector("#search").value)
+        console.log(e.target.parentElement.querySelector("#search").value);
+        render(home_template);
+        searchFind(e.target.parentElement.querySelector("#search").value)
+    }
+    else if(option == 'SONGS')
+        {
+            render(texts_template) 
+            compText(e.target.parentElement.querySelector("#search").value)
+        }
+    
 
 })
 document.addEventListener("keydown", (e)=>{
-    render(home_template);
-    if(e.code == "Enter") searchFind(document.querySelector("#search").value)
+    if(e.code == "Enter") {
+        render(home_template);
+        searchFind(document.querySelector("#search").value)
+    }
+    
+    
     
 })
+
 
 async function searchFind(event)//найти инфу про артиста
 {
